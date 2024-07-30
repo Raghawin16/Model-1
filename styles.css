@@ -1,0 +1,175 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://plus.unsplash.com/premium_photo-1721334042253-db2fcba3e127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1NTB8fHxlbnwwfHx8fHw%3D'); /* Use the path to your 4K image */
+    background-size: cover; /* Ensure the image covers the viewport */
+    background-position: center;
+    margin: 0;
+    background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-side {
+    width: 50%;
+    background-color: #9c27b0;
+    padding: 30px;
+    border-radius: 10px 0 0 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    width: 50%;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side h2 {
+    margin-bottom: 20px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #693aff, #d747d8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Hover state styles */
+button:hover {
+    background: linear-gradient(135deg, #d747d8, #693aff);
+    color: #fff;
+}
+
+button:disabled::after {
+    content: '';
+    display: block;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.social-login-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48%; /* Adjust width to fit two buttons in a row */
+    padding: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white; /* Add a white background to the buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Google button styles */
+.social-login.google {
+    background-color: #55acee; /* Google color */
+    color: white;
+}
+
+.social-login.google:hover {
+    background-color: #4a90e2; /* Slightly darker shade on hover */
+    color: white;
+}
+
+/* Facebook button styles */
+.social-login.facebook {
+    background-color: #3b5998; /* Facebook color */
+    color: white;
+}
+
+.social-login.facebook:hover {
+    background-color: #2d4373; /* Slightly darker shade on hover */
+    color: white;
+}
+
+.social-login img {
+    height: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9em;
+    display: none; /* Initially hidden */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .right-side {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .social-login-container {
+        flex-direction: column;
+    }
+
+    .social-login {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
